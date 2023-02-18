@@ -11,7 +11,7 @@ import trenes.controladores.VentanillaVagon;
  * Clase Lanzadera de la aplicación. Esta clase Tren contiene el método main
  * para realizar la ejecución del proyecto.
  *
- * @author David - IES Trassierra
+ * @author Oscar Martín Maraver
  * @version 1.0
  *
  */
