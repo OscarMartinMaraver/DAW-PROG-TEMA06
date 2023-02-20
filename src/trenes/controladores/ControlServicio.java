@@ -13,7 +13,6 @@ package trenes.controladores;
 
 public abstract class ControlServicio {
 
-
 	/*
 	 * Atributo de clase numControlesConfigurados. 
 	 */
@@ -36,10 +35,8 @@ public abstract class ControlServicio {
 	/*
 	 * Atributo tipoControlServicio. 
 	 */
-    protected enum Tipo{
-    Puerta, Ventanilla, TiraLuz, Altavoz, Desconocido;
-    }
-    protected Tipo tipoControlServicio;
+    
+    protected String tipoControlServicio;
     
 
 	/**
@@ -55,7 +52,7 @@ public abstract class ControlServicio {
         this.nombreControlServicio=nombreControlServicio;
         numControlesConfigurados=0;
         this.idControlServicio=numControlesConfigurados++;
-        this.tipoControlServicio=Tipo.Desconocido;
+        this.tipoControlServicio="Desconocido";
     }
     
 	/**
@@ -126,7 +123,7 @@ public abstract class ControlServicio {
 	 * Método observador (getter) que devuelve el tipo de control de servicio del objeto 
          * @return tipoControlServicio tipo de control de servicio del objeto.
 	 */
-    public Tipo getTipoControlServicio(){
+    public String getTipoControlServicio(){
         return this.tipoControlServicio;
     }
 
@@ -135,9 +132,19 @@ public abstract class ControlServicio {
          * este objeto. Para que se pueda asignar dicho valor se debe comprobar que pertenezca a 
          * uno de los cuatro tipos permitidos: "Puerta", Ventanilla, "Altavoz" o "TiraLuz". En caso 
          * de no corresponderse el parámetro para asignar con ninguno de estos cuatro tipos se asignará "Desconocido"
+         * @param tipoControlServicio tipo de control de servicio que se debe asignar
 	 */
-    public void setTipoControlServicio (Tipo t){
-        this.tipoControlServicio=t;
+    
+    public void setTipoControlServicio (String tipoControlServicio){
+         
+        if ("Puerta".equals(tipoControlServicio)
+                ||"Ventanilla".equals(tipoControlServicio)
+                ||"Tiraluz".equals(tipoControlServicio)
+                ||"Altavoz".equals(tipoControlServicio)){
+        this.tipoControlServicio=tipoControlServicio;
+        }else{
+            this.tipoControlServicio="Desconocido";
+        }
     }
 
 	/**
