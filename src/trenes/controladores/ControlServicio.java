@@ -17,19 +17,19 @@ public class ControlServicio {
 	 * Atributo de clase numControlesConfigurados. 
 	 */
 
-    
+    static int numControlesConfigurados;
     
 	/*
 	 * Atributo inmutable idControlServicio. 
 	 */
 
-    
+    protected int idControlServicio;
     
     
 	/*
 	 * Atributo nombreControlServicio.
 	 */
-
+    protected String nombreControlServicio;
     
     
 	/*
@@ -43,7 +43,10 @@ public class ControlServicio {
 	 * Constructor con un parámetro de ControlServicio.
 	 */
 
-    
+    public ControlServicio(String nombreControlServicio){
+        this.nombreControlServicio=nombreControlServicio;
+        this.idControlServicio=numControlesConfigurados++;
+    }
 
 	/*
 	 * Constructor sin parámetros de ControlServicio. 
