@@ -18,13 +18,13 @@ public abstract class ControlServicio {
 	 * Atributo de clase numControlesConfigurados. 
 	 */
 
-    protected static int numControlesConfigurados;
+    protected static long numControlesConfigurados;
     
 	/*
 	 * Atributo inmutable idControlServicio. 
 	 */
 
-    protected int idControlServicio;
+    protected long idControlServicio;
     
     
 	/*
@@ -43,8 +43,12 @@ public abstract class ControlServicio {
     
 
 	/**
-         * Constructor con un parámetro de ControlServicio.
-         * @param nombreControlServicio
+         * Constructor con un parámetro de ControlServicio. Este constructor simplemente 
+         * recibe un nombre de control de servicio para asignarlo al control que se va a 
+         * crear. Automáticamente asignar el identificador de Control de Servicio (idControlServicio) 
+         * a partir del número de controles existentes ya configurados. Y asigna como tipo de Control 
+         * de servicio (tipoControlServicio) el valor "Desconocido"
+         * @param nombreControlServicio Cadena con el nombre a asignar a este control
 	 */
 
     public ControlServicio(String nombreControlServicio){
@@ -55,75 +59,91 @@ public abstract class ControlServicio {
     }
     
 	/**
-	 * Constructor sin parámetros de ControlServicio. 
+	 * Constructor sin parámetros de ControlServicio. Este constructor simplemente inicializa valores 
+         * por defecto al control que se va a crear. Automáticamente asignar el identificador de Control 
+         * de Servicio (idControlServicio) a partir del número de controles existentes ya configurados. 
+         * Y asigna como tipo de Control de servicio (tipoControlServicio) el valor "Desconocido". De la 
+         * misma forma asigna "Desconocido" al nombre de control de Servicio (nombreControlServicio) 
 	 */
     public ControlServicio(){
         this("Desconocido");
     }
     
-	/*
+	/**
 	 * Método estático observador (getter)  número de controles
 	 * actualmente configurados
-	 *
+	 * @return numControlesConfigurados
 	 */
-    protected int getNumeroControlesConfigurados(){
+    public static long getNumControlesConfigurados(){
         return numControlesConfigurados;
     }
     
-	/*
+	/**
 	 * Método estático modificador (setter) para el número de controles
-	 * actualmente configurados. 
-	 */
-    protected void setNumeroControlesConfigurados(int numeroControlesConfigurados){
+	 * actualmente configurados.Para que se pueda asignar dicho valor
+         * se debe comprobar que sea mayor o igual que cero.
+         * @param numeroControlesConfigurados numero entero largo a asignar
+ 	 */
+    public static void setNumControlesConfigurados(long numeroControlesConfigurados){
         numControlesConfigurados=numeroControlesConfigurados;
     }
     
-	/*
+	/**
 	 * Método observador (getter) el identificador 
+         * @return idControlServicio identificado de control
 	 */
 
-    protected int getIdControlServicio(){
+    public long getIdControlServicio(){
         return idControlServicio;
     }
-
-	/*
+    
+	/**
 	 * Método modificador (setter) el identificador 
+         * @param idServicio identificador de control a asignar
 	 */
-    protected void setIdControlServicio(int idServicio){
+    public void setIdControlServicio(int idServicio){
         this.idControlServicio=idServicio;
     }
     
-        /*
-	 * Método observador (getter) nombre de control de 
+        /**
+	 * Método observador (getter)que devuelve el nombre de control de servicio
+         * @return nombreControlServicio nombre de control de servicio asignado
 	 */
-    protected String getNombreControlServicio(){
+    public String getNombreControlServicio(){
         return this.nombreControlServicio;
     }
-    
-	/*
-	 * Método modificador (setter) nombre de control de 
+	/**
+	 * Método modificador (setter) que asigna el nombre de control de servicio 
+         * al que pertenece este objeto. 
+         * @param nombreControlServicio nombre de control de servicio que se debe asignar.
 	 */
 
-    protected void setNombreControlServicio(String nombreControlServicio){
+    public void setNombreControlServicio(String nombreControlServicio){
         this.nombreControlServicio=nombreControlServicio;
     }
     
-	/*
-	 * Método observador (getter)  tipo de control 
+	/**
+	 * Método observador (getter) que devuelve el tipo de control de servicio del objeto 
+         * @return tipoControlServicio tipo de control de servicio del objeto.
 	 */
-    protected Tipo getTipoControlServicio(){
+    public Tipo getTipoControlServicio(){
         return this.tipoControlServicio;
     }
 
-	/*
-	 * Método modificador (setter) que asigna el tipo de control 
+	/**
+	 * Método modificador (setter) que asigna el tipo de control de servicio al que pertenece 
+         * este objeto. Para que se pueda asignar dicho valor se debe comprobar que pertenezca a 
+         * uno de los cuatro tipos permitidos: "Puerta", Ventanilla, "Altavoz" o "TiraLuz". En caso 
+         * de no corresponderse el parámetro para asignar con ninguno de estos cuatro tipos se asignará "Desconocido"
 	 */
-    protected void setTipoControlServicio (Tipo t){
+    public void setTipoControlServicio (Tipo t){
         this.tipoControlServicio=t;
     }
 
-	/*
-	 * Método toString 
+	/**
+	 * Método toString devuelve un String con los valores actuales de los atributos 
+         * Cada atributo aparecerá en una línea y su tabulación
+         * @return Cadena con los valores de los atributos
 	 */
     @Override
     public String toString(){
