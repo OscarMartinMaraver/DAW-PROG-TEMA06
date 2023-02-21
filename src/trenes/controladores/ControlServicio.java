@@ -15,9 +15,10 @@ public abstract class ControlServicio {
 
 	/*
 	 * Atributo de clase numControlesConfigurados. 
+         * 
 	 */
 
-    protected static long numControlesConfigurados;
+    protected static long numControlesConfigurados=0;
     
 	/*
 	 * Atributo inmutable idControlServicio. 
@@ -50,8 +51,8 @@ public abstract class ControlServicio {
 
     public ControlServicio(String nombreControlServicio){
         this.nombreControlServicio=nombreControlServicio;
-        numControlesConfigurados=0;
-        this.idControlServicio=numControlesConfigurados++;
+        this.idControlServicio=numControlesConfigurados;
+        numControlesConfigurados++;
         this.tipoControlServicio="Desconocido";
     }
     
