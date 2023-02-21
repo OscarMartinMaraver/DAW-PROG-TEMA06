@@ -42,7 +42,9 @@ public final class ConjuntoAltavoces extends ControlServicio implements Modifica
         super(nombreControlServicio);
         super.tipoControlServicio = "Altavoz";
         this.pistaReproduciendo=pistaReproduciendo;
+        if(volumenReproduccion<=Modificable.MAX&&volumenReproduccion>=Modificable.MIN){
         this.volumenReproduccion=volumenReproduccion;
+        }
     }
     
 
