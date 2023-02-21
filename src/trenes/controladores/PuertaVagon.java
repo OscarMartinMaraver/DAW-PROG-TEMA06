@@ -133,6 +133,7 @@ public final class PuertaVagon extends ControlServicio implements Activable {
      * Método toString devuelve un String con los valores actuales de los
      * atributos tanto de esta clase como de la superclase. Cada atributo
      * aparecerá en una línea y su tabulación
+     * @return Cadena con los valores de los atributos
      */
     @Override
     public String toString() {
@@ -140,7 +141,7 @@ public final class PuertaVagon extends ControlServicio implements Activable {
         // Llamada al método “toString” de la superclase
         resultado = new StringBuilder(super.toString());
         // A continuación añadimos la información “especializada” de esta subclase
-        resultado.append("Puerta Vagon Tren\n");
+        resultado.append("	Puerta Vagon Tren\n");
         resultado.append("		Puerta: ").append(this.estadoPuertaCerrada).append("\n");
         resultado.append("		Ubicacion Puerta: ").append(this.ubicacionPuerta).append("\n");
         return resultado.toString();

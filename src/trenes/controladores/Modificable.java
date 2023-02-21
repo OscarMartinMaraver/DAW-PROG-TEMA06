@@ -39,6 +39,6 @@ public interface Modificable {
      * @throws IllegalStateException si el elemento ya está en su valor mínimo
      */
     
-    void disminuir()throws IllegalStateException;;
+    void disminuir()throws IllegalStateException;
 
 }
