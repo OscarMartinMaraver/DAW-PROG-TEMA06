@@ -1,6 +1,8 @@
 package trenes;
 
+import trenes.controladores.Activable;
 import trenes.controladores.ControlServicio;
+import trenes.controladores.PuertaVagon;
 
 
 
@@ -199,20 +201,59 @@ public class VagonTren {
         }
         return numAltavoces;
     }
-    /*
-     * Método cerrarPuertas 
+    
+    /**
+     * Método cerrarPuertas cierra todas las puertas del vagón. Es decir, recorre el array de controles de 
+     * servicio que presenta como atributo y en caso de ser una instancia de PuertaVagon activa su método off(). 
+     * Para evitar errores se realiza un casting a PuertaVagon 
      *
      */
 
+    public void cerrarPuertas() {
+        for (int i = 0; i < this.servicios.length; i++) {
+            if (servicios[i] instanceof PuertaVagon) {// Para asegurarnos de que es una puerta del vagon
+    // Si la variable elemento es una instancia de la clase PuertaVagon (además de serlo de ControlServicio, que es su superclase)
+            ((PuertaVagon) servicios[i]).off(); // Esto sí compila  
+    // Al "tratar" la variable como de tipo PuertaVagon, el compilador de Java permitirá realizar la operación
+            }
+        }
+    }
 
-    /*
-     * Método activarTodosServicios 
+    /**
+     * Método activarTodosServicios activa todos los servicios del vagón. Es decir, recorre el array de controles de servicio que 
+     * presenta como atributo y en caso de ser una instancia de la interfaz Activable activa su método on(). Para evitar errores 
+     * se realiza un casting a Activable 
      */
 
-
-    /*
-     * Método toString 
+    public void activarTodosServicios(){
+        for (int i = 0; i < this.servicios.length; i++) {
+            if (servicios[i] instanceof Activable) {
+             // Estamos seguros de que la variable elemento implementa la interfaz Activable
+             ((Activable) servicios[i]).on();   
+            // Al "tratar" la variable como de tipo "Activable", el compilador de Java permitirá realizar la operación
+            }
+        }
+    }
+    
+    /**
+     * Método toString devuelve un String listando todos y cada uno de los controles de servicio del vagón. Es decir, 
+     * recorre el array de controles de servicio que presenta como atributo y muestra los datos de cada elemento. 
+     * Por último por último añade a la cadena a devolver el número de controles configurados en la clase ControlServicio.
+     * 
+     * @return Cadena con los controles de servicio del vagón
      */
    
-
+    @Override
+    public String toString(){
+      StringBuilder resultado = new StringBuilder();
+      resultado.append("El Vagón número ").append("\n");
+      resultado.append("Pertenece a ").append(this.companyiaTrenes).append("\n");
+      resultado.append("Presenta los siguientes controles de servicios: ");
+      for (int i = 0; i < this.servicios.length; i++) {
+          resultado.append(servicios[i].toString());
+      }
+      resultado.append("-------------------------------------------------------------------\n");
+      resultado.append("Se tienen: ").append(ControlServicio.getNumControlesConfigurados()).append(" controles configurados\n");
+      return resultado.toString();
+    }
 }
