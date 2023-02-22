@@ -25,7 +25,7 @@ public final class ConjuntoAltavoces extends ControlServicio implements Modifica
      * Atributo volumenReproduccion.
      */
 
-    protected byte volumenReproduccion;
+    protected int volumenReproduccion;
     
     /**
      * Constructor con tres parámetros de ConjuntoAltavoces. Este constructor inicializa el nombre del controlDeServicio 
@@ -34,17 +34,18 @@ public final class ConjuntoAltavoces extends ControlServicio implements Modifica
      * el valor pasado como segundo parámetro. Y por último, asignamos al tipo de Control de Servicio de la superclase o la 
      * clase padre el valor de "Altavoz", identificando de esta forma el tipo de Control de servicio que es.
      * @param pistaReproduciendo pista, melodía o locución de este tipo de control de servicio.
-     * @param volumenReproduccion 
+     * @param volumenReproduccion Volumen de salida de sonido del conjunto de altavoces.
      * @param nombreControlServicio nombre que se le va a asignar a este tipo de control de Servicio.
      */
 
-    public ConjuntoAltavoces​(String pistaReproduciendo, byte volumenReproduccion, String nombreControlServicio){
+    public ConjuntoAltavoces​(String pistaReproduciendo, int volumenReproduccion, String nombreControlServicio){
         super(nombreControlServicio);
         super.tipoControlServicio = "Altavoz";
         this.pistaReproduciendo=pistaReproduciendo;
-        if(volumenReproduccion<=Modificable.MAX&&volumenReproduccion>=Modificable.MIN){
+        //Para inicializar el parametro volumenReproduccion llamo al método que le asigna el valor si
+        //este se encuentra entre el máximo y el mínimo establecido en la interfaz Modificable
+        //setVolumenReproduccion(volumenReproduccion);
         this.volumenReproduccion=volumenReproduccion;
-        }
     }
     
 
@@ -59,7 +60,7 @@ public final class ConjuntoAltavoces extends ControlServicio implements Modifica
      */
     
     public ConjuntoAltavoces​(String pistaReproduciendo,String nombreControlServicio){
-        this(pistaReproduciendo,(byte)0, nombreControlServicio);
+        this(pistaReproduciendo,0, nombreControlServicio);
     }
 
     /**
@@ -88,7 +89,7 @@ public final class ConjuntoAltavoces extends ControlServicio implements Modifica
      * @return volumenReproduccion Volumen actual de reproducción
      */
 
-    public byte getVolumenReproduccion(){
+    public int getVolumenReproduccion(){
         return this.volumenReproduccion;
     }
 
@@ -97,22 +98,22 @@ public final class ConjuntoAltavoces extends ControlServicio implements Modifica
      * Este nuevo valor no se asigna si no está entre 0 y 100 ambos inclusive
      * @param volumenReproduccion - Nuevo volumen de reproducción.
      */
-    public void setVolumenReproduccion(byte volumenReproduccion){
-        if (volumenReproduccion<=100&&volumenReproduccion>=0){
+    public void setVolumenReproduccion(int volumenReproduccion){
+        if (volumenReproduccion<=Modificable.MAX&&volumenReproduccion>=Modificable.MIN){
             this.volumenReproduccion=volumenReproduccion;
         }
     }
 
     /**
-     * Implementaión del método de la interfaz Modificable para aumentar el volumen en 1. 
+     * Implementación del método de la interfaz Modificable para aumentar el volumen en 1. 
      * En caso de estar en el valor máximo 100, no se aumenta
      * @throws IllegalStateException si el altavoz ya está en su valor máximo de volumen
      */
 
     @Override
     public void aumentar() throws IllegalStateException{
-        if(this.volumenReproduccion<100){
-            this.volumenReproduccion=this.volumenReproduccion++;
+        if(this.volumenReproduccion<Modificable.MAX){
+            this.volumenReproduccion++;
         }else{
             throw new IllegalStateException ("El volumen de reproducción ya está en su valor máximo (100%)");
         }
@@ -127,8 +128,8 @@ public final class ConjuntoAltavoces extends ControlServicio implements Modifica
 
     @Override
     public void disminuir()throws IllegalStateException{
-        if(this.volumenReproduccion>0){
-            this.volumenReproduccion=this.volumenReproduccion--;
+        if(this.volumenReproduccion>Modificable.MIN){
+            this.volumenReproduccion--;
         }else{
             throw new IllegalStateException ("El volumen de reproducción ya está en su valor mínimo (0%)");
         }

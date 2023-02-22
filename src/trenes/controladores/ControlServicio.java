@@ -7,7 +7,7 @@ package trenes.controladores;
  * vagón del tren.
  * No es instanciable.
  * 
- * @author OScar Martín Maraver
+ * @author Oscar Martín Maraver
  * @version 1.0
  */
 
