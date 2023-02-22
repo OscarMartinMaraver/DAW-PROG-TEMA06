@@ -9,7 +9,7 @@ package trenes;
  * Controles de Servicio para controlar dicho vagón. Para ello esta clase cuenta
  * con un array de objetos de tipo ControlServicio.
  *
- * @author David - IES Trassierra
+ * @author Oscar Martín Maraver
  * @version 1.0
  */
 public class VagonTren {

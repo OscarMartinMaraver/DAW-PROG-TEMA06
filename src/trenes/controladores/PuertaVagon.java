@@ -119,6 +119,8 @@ public final class PuertaVagon extends ControlServicio implements Activable {
      * Implementaión del método de la interfaz Activable para cerrar la puerta
      * del vagón del control de servicio, se establece el valor de
      * estadoPuertaCerrada a true.
+     * 
+     * @throws IllegalStateException si la puerta ya está cerrada
      */
     @Override
     public void off() throws IllegalStateException {
@@ -133,6 +135,7 @@ public final class PuertaVagon extends ControlServicio implements Activable {
      * Método toString devuelve un String con los valores actuales de los
      * atributos tanto de esta clase como de la superclase. Cada atributo
      * aparecerá en una línea y su tabulación
+     * 
      * @return Cadena con los valores de los atributos
      */
     @Override

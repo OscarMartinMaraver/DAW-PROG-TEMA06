@@ -46,6 +46,7 @@ public abstract class ControlServicio {
          * crear. Automáticamente asignar el identificador de Control de Servicio (idControlServicio) 
          * a partir del número de controles existentes ya configurados. Y asigna como tipo de Control 
          * de servicio (tipoControlServicio) el valor "Desconocido"
+         * 
          * @param nombreControlServicio Cadena con el nombre a asignar a este control
 	 */
 
@@ -70,6 +71,7 @@ public abstract class ControlServicio {
 	/**
 	 * Método estático observador (getter)  número de controles
 	 * actualmente configurados
+         * 
 	 * @return numControlesConfigurados
 	 */
     public static long getNumControlesConfigurados(){
@@ -80,6 +82,7 @@ public abstract class ControlServicio {
 	 * Método estático modificador (setter) para el número de controles
 	 * actualmente configurados.Para que se pueda asignar dicho valor
          * se debe comprobar que sea mayor o igual que cero.
+         * 
          * @param numeroControlesConfigurados numero entero largo a asignar
  	 */
     public static void setNumControlesConfigurados(long numeroControlesConfigurados){
@@ -88,6 +91,7 @@ public abstract class ControlServicio {
     
 	/**
 	 * Método observador (getter) el identificador 
+         * 
          * @return idControlServicio identificado de control
 	 */
 
@@ -97,6 +101,7 @@ public abstract class ControlServicio {
     
 	/**
 	 * Método modificador (setter) el identificador 
+         * 
          * @param idServicio identificador de control a asignar
 	 */
     public void setIdControlServicio(int idServicio){
@@ -105,6 +110,7 @@ public abstract class ControlServicio {
     
         /**
 	 * Método observador (getter)que devuelve el nombre de control de servicio
+         * 
          * @return nombreControlServicio nombre de control de servicio asignado
 	 */
     public String getNombreControlServicio(){
@@ -113,6 +119,7 @@ public abstract class ControlServicio {
 	/**
 	 * Método modificador (setter) que asigna el nombre de control de servicio 
          * al que pertenece este objeto. 
+         * 
          * @param nombreControlServicio nombre de control de servicio que se debe asignar.
 	 */
 
@@ -121,7 +128,8 @@ public abstract class ControlServicio {
     }
     
 	/**
-	 * Método observador (getter) que devuelve el tipo de control de servicio del objeto 
+	 * Método observador (getter) que devuelve el tipo de control de servicio del objeto
+         * 
          * @return tipoControlServicio tipo de control de servicio del objeto.
 	 */
     public String getTipoControlServicio(){
@@ -133,6 +141,7 @@ public abstract class ControlServicio {
          * este objeto. Para que se pueda asignar dicho valor se debe comprobar que pertenezca a 
          * uno de los cuatro tipos permitidos: "Puerta", Ventanilla, "Altavoz" o "TiraLuz". En caso 
          * de no corresponderse el parámetro para asignar con ninguno de estos cuatro tipos se asignará "Desconocido"
+         * 
          * @param tipoControlServicio tipo de control de servicio que se debe asignar
 	 */
     
@@ -151,6 +160,7 @@ public abstract class ControlServicio {
 	/**
 	 * Método toString devuelve un String con los valores actuales de los atributos 
          * Cada atributo aparecerá en una línea y su tabulación
+         * 
          * @return Cadena con los valores de los atributos
 	 */
     @Override
