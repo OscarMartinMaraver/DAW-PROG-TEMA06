@@ -140,9 +140,9 @@ public final class VentanillaVagon extends ControlServicio implements Modificabl
         // Llamada al método “toString” de la superclase
         resultado = new StringBuilder(super.toString());
         // A continuación añadimos la información “especializada” de esta subclase
-        resultado.append("	Ventanilla Vagon Tren\n");
-        resultado.append("		Opacidad: ").append(this.opacidadVentanilla).append("\n");
-        resultado.append("		Ubicacion Ventanilla: ").append(this.ubicacionVentanilla).append("\n");
+        resultado.append("    Ventanilla Vagon Tren\n");
+        resultado.append("    	Opacidad: ").append(this.opacidadVentanilla).append("\n");
+        resultado.append("    	Ubicacion Ventanilla: ").append(this.ubicacionVentanilla).append("\n");
         return resultado.toString();
     }
 

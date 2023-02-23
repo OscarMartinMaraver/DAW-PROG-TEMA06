@@ -22,46 +22,54 @@ public class Tren {
         /* 1. Crear un array de 10 objetos tipo Control Servicio en una variable llamada
          controlesVagon
          */
-        
-        
+        ControlServicio[] controlesVagon;
+        controlesVagon=new ControlServicio[10];
         
         /*2. Creamos dos objetos ConjuntoAltavoces, y los agregamos al array en las
          posiciones 0 y 1 del mismo
          */
         
+        controlesVagon[0]= new ConjuntoAltavoces ("Melodía Renfe",0, "Vagon 1 Altavoces Techo");
+        controlesVagon[1]= new ConjuntoAltavoces ("Melodía Renfe",0, "Vagon 1 Altavoces Laterales");
         
         /* 3. Creamos dos objetos PuertaVagonTren, y los agregamos al array en las
          posiciones 2 y 3 del mismo
          */
         
+        controlesVagon[2]= new PuertaVagon (true,"Vagon 1 Trasera", "Puerta Trasera");
+        controlesVagon[3]= new PuertaVagon (true,"Vagon 1 Delantera", "Puerta Delantera");
         
         /* 4. Creamos cuatro objetos VentanillaVagon, y los agregamos al array en las
          posiciones 4,5,6 y 7 del mismo        
          */
         
-        
+        controlesVagon[4]= new VentanillaVagon (0,"Vagon 1 Ventanilla Delantera Izquierda", "VDI");
+        controlesVagon[5]= new VentanillaVagon (0,"Vagon 1 Ventanilla Trasera Izquierda", "VTI");
+        controlesVagon[6]= new VentanillaVagon (0,"Vagon 1 Ventanilla Delantera Derecha", "VDD");
+        controlesVagon[7]= new VentanillaVagon (0,"Vagon 1 Ventanilla Trasera Derecha", "VTD");
         
         /* 5. Creamos dos objetos TiraLuz, y los agregamos al array en las posiciones 8
          y 9 del mismo        
          */
         
-        
-        
+        controlesVagon[8]= new TiraLuz (true,"Vagon 1 Tira Izquierda",0,166,44,161,"Tira Luz Izquierda");
+        controlesVagon[9]= new TiraLuz (true,"Vagon 1 Tira Derecha",0,108,225,231,"Tira Luz Derecha");
         
         
         /* 6. Se instancia o crea un objeto de tipo VagonTren. Para ello utilizamos, el
 	   constructor de VagonTren al que se le pasa como parámetro el array de
 	   objetos de tipo ControlServicio
          */
-
+        
+        VagonTren vagon= new VagonTren("Renfe","Numero 2138",controlesVagon);
         
         /*
 	 * 7. Se imprime el objeto de tipo VagonTren. Para ello directamente imprimimos
 	 * el objeto (ya que al tener creado el método toString() imprimirá toda la
 	 * información)
          */
-        
-        
+        System.out.println(vagon.toString());
+
         
         /*
 	 * 8. Mediante un bucle recorremos el array de objetos de tipo ControlServicio

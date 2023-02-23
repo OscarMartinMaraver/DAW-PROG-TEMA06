@@ -246,14 +246,15 @@ public class VagonTren {
     @Override
     public String toString(){
       StringBuilder resultado = new StringBuilder();
-      resultado.append("El Vagón número ").append("\n");
+      resultado.append("El Vagón ").append(this.descripcion).append("\n");
       resultado.append("Pertenece a ").append(this.companyiaTrenes).append("\n");
-      resultado.append("Presenta los siguientes controles de servicios: ");
+      resultado.append("Presenta los siguientes controles de servicios: \n");
       for (int i = 0; i < this.servicios.length; i++) {
           resultado.append(servicios[i].toString());
       }
-      resultado.append("-------------------------------------------------------------------\n");
+      resultado.append("-----------------------------------------------------\n");
       resultado.append("Se tienen: ").append(ControlServicio.getNumControlesConfigurados()).append(" controles configurados\n");
+      resultado.append("\n");
       return resultado.toString();
     }
 }

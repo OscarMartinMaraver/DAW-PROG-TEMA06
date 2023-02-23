@@ -358,10 +358,10 @@ public final class TiraLuz extends ControlServicio implements Activable, Modific
         resultado = new StringBuilder(super.toString());
         // A continuación añadimos la información “especializada” de esta subclase
         resultado.append("    Luz\n");
-        resultado.append("    	 Tira Luz: ").append((this.encendida)? "Encendida":"Apagada").append("\n");
-        resultado.append("       Ubicacion Tira Luz: ").append(this.ubicacionTira).append("\n");
-        resultado.append("       Intensidad Luz: ").append(this.intensidadTira).append("\n");
-        resultado.append("       Color RGB: ").append(this.colorRojo+", "+this.colorVerde+", "+this.colorAzul).append("\n");
+        resultado.append("	Tira Luz: ").append((this.encendida)? "Encendida":"Apagada").append("\n");
+        resultado.append("	Ubicacion Tira Luz: ").append(this.ubicacionTira).append("\n");
+        resultado.append("	Intensidad Luz: ").append(this.intensidadTira).append("\n");
+        resultado.append("        Color RGB: ").append(this.colorRojo+", "+this.colorVerde+", "+this.colorAzul).append("\n");
         return resultado.toString();
     }
 

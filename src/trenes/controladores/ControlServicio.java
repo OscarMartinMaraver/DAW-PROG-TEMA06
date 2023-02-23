@@ -166,7 +166,7 @@ public abstract class ControlServicio {
     @Override
     public String toString(){
     StringBuilder resultado=new StringBuilder();
-    resultado.append("-------------------------------------------------------------------\n");
+    resultado.append("-----------------------------------------------------\n");
     resultado.append("ControlServicio: \n");
     resultado.append("    Identificador: ").append(this.idControlServicio).append("\n");
     resultado.append("    Nombre Servicio: ").append(this.nombreControlServicio).append("\n");

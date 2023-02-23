@@ -158,9 +158,9 @@ public final class ConjuntoAltavoces extends ControlServicio implements Modifica
         // Llamada al método “toString” de la superclase
         resultado = new StringBuilder(super.toString());
         // A continuación añadimos la información “especializada” de esta subclase
-        resultado.append("	Conjunto Altavoces\n");
-        resultado.append("		Sonido Reproduciendo: ").append(this.pistaReproduciendo).append("\n");
-        resultado.append("		Volumen: ").append(this.volumenReproduccion).append("\n");
+        resultado.append("    Conjunto Altavoces\n");
+        resultado.append("	Sonido Reproduciendo: ").append(this.pistaReproduciendo).append("\n");
+        resultado.append("	Volumen: ").append(this.volumenReproduccion).append("\n");
         return resultado.toString();
     }
 
