@@ -17,28 +17,25 @@ public interface Modificable {
     /**
      * Mínimo valor posible para el estado del control de servicio: 0
      */
-    
-    static final int MIN=0;
-    
-    
+    static final int MIN = 0;
+
     /**
      * Máxima valor posible para el estado del control de servicio:100
      */
+    static final int MAX = 100;
 
-    static final int MAX=100;
-    
     /**
      * Definición del método para aumentar un parámetro
+     *
      * @throws IllegalStateException si el elemento ya está en su valor máximo
      */
-
     void aumentar() throws IllegalStateException;
-    
+
     /**
      * Definición del método para disminuir un parámetro
+     *
      * @throws IllegalStateException si el elemento ya está en su valor mínimo
      */
-    
-    void disminuir()throws IllegalStateException;
+    void disminuir() throws IllegalStateException;
 
 }

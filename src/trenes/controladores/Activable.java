@@ -12,17 +12,16 @@ package trenes.controladores;
  */
 public interface Activable {
 
-
     /**
      * Definición del método para activación del elemento on
+     *
      * @throws IllegalStateException si el elemto ya estaba activado
      */
+    void on() throws IllegalStateException;
 
-    void on()throws IllegalStateException;
-    
-    
     /**
      * Definición del método para desactivación del elemento off
+     *
      * @throws IllegalStateException si el elemento ya estaba desactivado
      */
     void off() throws IllegalStateException;

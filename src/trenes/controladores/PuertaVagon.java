@@ -13,13 +13,13 @@ package trenes.controladores;
  */
 public final class PuertaVagon extends ControlServicio implements Activable {
 
-    /*
-     * Atributo estadoPuertaCerrada. 
+    /**
+     * Atributo estadoPuertaCerrada.
      */
     protected boolean estadoPuertaCerrada;
 
-    /*
-     * Atributo ubicacionPuerta. 
+    /**
+     * Atributo ubicacionPuerta.
      */
     protected String ubicacionPuerta;
 
@@ -119,7 +119,7 @@ public final class PuertaVagon extends ControlServicio implements Activable {
      * Implementaión del método de la interfaz Activable para cerrar la puerta
      * del vagón del control de servicio, se establece el valor de
      * estadoPuertaCerrada a true.
-     * 
+     *
      * @throws IllegalStateException si la puerta ya está cerrada
      */
     @Override
@@ -135,7 +135,7 @@ public final class PuertaVagon extends ControlServicio implements Activable {
      * Método toString devuelve un String con los valores actuales de los
      * atributos tanto de esta clase como de la superclase. Cada atributo
      * aparecerá en una línea y su tabulación
-     * 
+     *
      * @return Cadena con los valores de los atributos
      */
     @Override
@@ -145,7 +145,7 @@ public final class PuertaVagon extends ControlServicio implements Activable {
         resultado = new StringBuilder(super.toString());
         // A continuación añadimos la información “especializada” de esta subclase
         resultado.append("    Puerta Vagon Tren\n");
-        resultado.append("	 Puerta: ").append(this.estadoPuertaCerrada).append("\n");
+        resultado.append("	 Puerta: ").append((this.estadoPuertaCerrada) ? "Cerrada" : "Abierta").append("\n");
         resultado.append("	 Ubicacion Puerta: ").append(this.ubicacionPuerta).append("\n");
         return resultado.toString();
     }
