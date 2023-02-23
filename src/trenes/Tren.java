@@ -125,7 +125,7 @@ public class Tren {
             }
         }
          */
- /*
+        /*
 	 * 11. Nuevamente se imprime el objeto de tipo VagonTren para ver los cambios
 	 * realizados. Para ello directamente imprimimos el objeto (ya que al tener
 	 * creado el método toString() imprimirá toda la información)
